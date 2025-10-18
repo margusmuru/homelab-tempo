@@ -1,8 +1,9 @@
-caches:
-  - roles:
-    - frontend-search  
-    memcached: 
-      addresses: dns+memcached:11211
+cache:  
+  caches:
+    - roles:
+      - frontend-search  
+      memcached: 
+        addresses: dns+memcached:11211
 
 query_frontend:
   search:
