@@ -5,7 +5,7 @@ volumes:
 services:
 
   memcached:
-    container_name: memcached
+    container_name: tempo-memcached-dev-2-vm-1
     image: memcached:1.6.29
     ports:
       - "11211:11211"
@@ -17,7 +17,7 @@ services:
       - grafana
 
   tempo:
-    container_name: tempo
+    container_name: tempo-dev-2-vm-1
     image: grafana/tempo:2.9.0
     command: [ "-config.file=/etc/tempo.yaml" ]
     volumes:
