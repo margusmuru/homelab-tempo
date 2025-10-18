@@ -4,7 +4,7 @@ stages:
   - deploy
 
 include:
-  - component: $CI_SERVER_FQDN/components/docker/config-docker@~latest
+  - component: $CI_SERVER_FQDN/components/docker/config-docker-nr@~latest
     inputs:
       as: "docker-lint"
       local_path: "deployments/dev-2-vm-1"
