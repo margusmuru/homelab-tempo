@@ -34,9 +34,9 @@ services:
     networks:
       - grafana
 
-#networks:
-#  grafana:
-#    name: grafana
-#    driver: bridge
-#    external: true
-#    attachable: true
+networks:
+  grafana:
+    name: grafana
+    driver: bridge
+    external: true
+    attachable: true
