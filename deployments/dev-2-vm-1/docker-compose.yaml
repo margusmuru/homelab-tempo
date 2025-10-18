@@ -1,6 +1,6 @@
 ---
 volumes:
-  tempo-data: {}
+  tempo-dev-2-vm-1-data: {}
 
 services:
 
@@ -22,7 +22,7 @@ services:
     command: [ "-config.file=/etc/tempo.yaml" ]
     volumes:
       - ./config/tempo.yaml:/etc/tempo.yaml
-      - tempo-data:/var/tempo
+      - tempo-dev-2-vm-1-data:/var/tempo
     ports:
       - "3200:3200"   # tempo
       - "9095:9095" # tempo grpc
