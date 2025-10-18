@@ -1,0 +1,42 @@
+---
+volumes:
+  tempo-data: {}
+
+services:
+
+  memcached:
+    container_name: memcached
+    image: memcached:1.6.29
+    ports:
+      - "11211:11211"
+    environment:
+      - MEMCACHED_MAX_MEMORY=64m  # Set the maximum memory usage
+      - MEMCACHED_THREADS=4       # Number of threads to use
+    restart: unless-stopped
+    networks:
+      - grafana
+
+  tempo:
+    container_name: tempo
+    image: grafana/tempo:main-9633c28
+    command: [ "-config.file=/etc/tempo.yaml" ]
+    volumes:
+      - ./config/tempo.yaml:/etc/tempo.yaml
+      - tempo-data:/var/tempo
+    ports:
+      - "3200:3200"   # tempo
+      - "9095:9095" # tempo grpc
+      - "4327:4317"  # otlp grpc
+      - "4328:4318"  # otlp http
+    restart: unless-stopped
+    depends_on:
+      - memcached
+    networks:
+      - grafana
+
+#networks:
+#  grafana:
+#    name: grafana
+#    driver: bridge
+#    external: true
+#    attachable: true
