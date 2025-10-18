@@ -13,7 +13,7 @@ Grafana Tempo is an open-source, high-scale distributed tracing backend that all
 
 | Deployment               | Location           | Tags            | Status     | Url                                                              |
 | ------------------------ | ------------------ | --------------- | ---------- | ---------------------------------------------------------------- |
-| tempo-dev-2-vm-1 | dev-2-vm | ![icon](.attachments/d.png) | **active** | http://192.168.40.112:3000<br> |
+| tempo-dev-2-vm-1 | dev-2-vm | ![icon](.attachments/d.png) | **active** | http://192.168.40.112<br> |
 
 # References
 - ![icon](.attachments/github-icon.png)  [Github mirror](https://github.com/margusmuru/homelab-tempo)
