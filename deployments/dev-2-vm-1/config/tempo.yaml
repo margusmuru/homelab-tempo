@@ -20,6 +20,19 @@ query_frontend:
     duration_slo: 5s
     throughput_bytes_slo: 1.073741824e+09
 
+server:
+  grpc_server_max_recv_msg_size: 67108864  # 64MB
+  grpc_server_max_send_msg_size: 67108864  # 64MB
+# ingester_client:
+#   grpc_client_config:
+#     max_recv_msg_size: 209715200  # 200MB
+#     max_send_msg_size: 209715200  # 200MB
+#querier:
+#  frontend_worker:
+#    grpc_client_config:
+#      max_recv_msg_size: 209715200  # 200MB
+#      max_send_msg_size: 67108864  # 64MB
+
 distributor:
   receivers:
     otlp:
