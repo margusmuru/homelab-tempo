@@ -67,7 +67,7 @@ metrics_generator:
   storage:
     path: /tmp/tempo/generator/wal
     remote_write:
-      - url: http://mustfail:9090/api/v1/write
+      - url: http://192.168.40.112:9090/api/v1/write
         send_exemplars: true
   registry:
     # A list of labels that will be added to all generated metrics.
