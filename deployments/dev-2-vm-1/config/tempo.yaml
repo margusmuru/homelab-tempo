@@ -74,10 +74,10 @@ metrics_generator:
     external_labels:
       source: tempo
   processor:
-    service_graphs:
+#    service_graphs:
     span_metrics:
       enable_target_info: true
-    local-blocks:
+#    local-blocks:
   traces_storage:
     path: /tmp/tempo/generator/traces
 
