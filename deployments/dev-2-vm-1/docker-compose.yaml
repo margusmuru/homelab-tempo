@@ -6,7 +6,7 @@ services:
 
   memcached:
     container_name: tempo-memcached-dev-2-vm-1
-    image: memcached:1.6.40
+    image: memcached:1.6.41
     ports:
       - "11211:11211"
     environment:
