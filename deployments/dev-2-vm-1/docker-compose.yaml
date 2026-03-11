@@ -38,5 +38,4 @@ networks:
   grafana:
     name: grafana
     driver: bridge
-    external: true
     attachable: true
