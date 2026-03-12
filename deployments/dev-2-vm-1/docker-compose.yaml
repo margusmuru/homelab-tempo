@@ -18,7 +18,7 @@ services:
 
   tempo:
     container_name: tempo-dev-2-vm-1
-    image: grafana/tempo:2.10.1
+    image: grafana/tempo:2.10.2
     command: [ "-config.file=/etc/tempo.yaml" ]
     volumes:
       - ./config/tempo.yaml:/etc/tempo.yaml
