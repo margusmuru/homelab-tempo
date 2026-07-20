@@ -41,8 +41,6 @@ distributor:
           endpoint: "tempo:4317"
         http:
           endpoint: "tempo:4318"
-    opencensus:
-      endpoint: "tempo:55678"
 
 ingester:
   flush_check_period: 120s
