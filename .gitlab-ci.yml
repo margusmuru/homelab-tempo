@@ -2,13 +2,16 @@ stages:
   - test
   - deploy
 
-tempo-dev-2-vm-1:
-  trigger:
-    include:
-      - local: deployments/dev-2-vm-1/.gitlab-ci.yml
-    strategy: mirror
-  rules:
-    - if: '$CI_COMMIT_REF_NAME == "main"'
-      changes:
-        - 'deployments/dev-2-vm-1/**/*'
-    - when: manual
+include:
+# tempo — memcached + tempo on dev-2; bind-mounted config/ ships via deploy-compose
+# (retired the separate config-dir-copy job); grafana network
+  - component: $CI_SERVER_FQDN/components/docker/validate-compose@~latest
+    inputs:
+      as: "lint-tempo"
+      local_path: "deployments/tempo"
+  - component: $CI_SERVER_FQDN/components/docker/deploy-compose@~latest
+    inputs:
+      as: "deploy-tempo"
+      environment: "dev-2"                            # host derives to dev-2-vm.margusm.dev
+      local_path: "deployments/tempo"
+      remote_path: "deployments/tempo-dev-2-vm-1"     # unchanged host dir → in-place update
