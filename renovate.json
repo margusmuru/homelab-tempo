@@ -2,5 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "labels": ["dependencies"],
   "assignees": ["@margusmuru"],
-  "dependencyDashboard": true
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "description": "Hold grafana/tempo on 2.x — v3 is a breaking architecture change (ingester/compactor removed); upgrade deliberately later",
+      "matchPackageNames": ["grafana/tempo"],
+      "allowedVersions": "<3.0.0"
+    }
+  ]
 }
