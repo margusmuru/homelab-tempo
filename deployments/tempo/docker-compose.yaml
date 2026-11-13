@@ -18,7 +18,7 @@ services:
 
   tempo:
     container_name: tempo-dev-2-vm-1
-    image: grafana/tempo:2.10.8  # pinned to 2.x; v3 is a breaking arch change (ingester/compactor removed) — migrate deliberately later
+    image: grafana/tempo:2.10.10  # pinned to 2.x; v3 is a breaking arch change (ingester/compactor removed) — migrate deliberately later
     command: [ "-config.file=/etc/tempo.yaml" ]
     volumes:
       - ./config/tempo.yaml:/etc/tempo.yaml
